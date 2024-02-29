@@ -8,9 +8,8 @@ public class Disciplina {
 
     public Disciplina (String nome, String codigo, String professor) {
         this.nome = nome;
-        this. codigo = codigo;
+        this.codigo = codigo;
         this.professor = professor;
-
     }
 
     public String getNome() {
@@ -30,11 +29,13 @@ public class Disciplina {
     }
 
     public void setCodigo(String codigo) {
+        if (codigo == null || codigo.trim().isEmpty()) {
+            throw new IllegalArgumentException("Código da disciplina não pode ser vazio ou nulo");
+        }
         this.codigo = codigo;
     }
 
     public void setProfessor(String professor) {
         this.professor = professor;
     }
-
 }
